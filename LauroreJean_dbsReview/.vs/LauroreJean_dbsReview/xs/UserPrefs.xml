@@ -1,0 +1,25 @@
+﻿<Properties StartupConfiguration="{A8BAFD2F-AF1D-4B73-A1E7-D81215BF004B}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="LauroreJean_dbsReview/Program.cs">
+    <Files>
+      <File FileName="LauroreJean_dbsReview/Program.cs" Line="62" Column="84" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="LauroreJean_dbsReview" expanded="True">
+            <Node name="LauroreJean_dbsReview" expanded="True">
+              <Node name="Program.cs" selected="True" />
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.ItemProperties.LauroreJean__dbsReview PreferredExecutionTarget="MonoDevelop.Default" />
+</Properties>
