@@ -7,9 +7,9 @@ namespace LauroreJean_FinalProject
         //Fields
         public double LoanPrice { get; set; }
         public int LoanTerms { get; set; }
-        public decimal EstimateAPR { get; set; }
+        public double EstimateAPR { get; set; }
 
-        public Car(string make, string model, int year, decimal estimateAPR, decimal loanPrice, int loanTerms):base(make, model, year)
+        public Car(string make, string model, int year, double estimateAPR, double loanPrice, int loanTerms):base(make, model, year)
         {
             Year = year;
             EstimateAPR = estimateAPR;
@@ -18,9 +18,18 @@ namespace LauroreJean_FinalProject
         }
 
         //Overriding the default method in Vehicle class
-        public override decimal Calculation()
+        public override double Calculation()
         {
-            return 0;
+            double step1 = EstimateAPR / 100;
+            double step2 = step1 / 12;
+            double step3 = step2 * LoanPrice;
+            double step4 = step2 + 1;
+            double step5 = Math.Pow(step4, 36);
+            double step6 = 1 / step5;
+            double step7 = 1 - step6;
+            double step8 = step3 / step7;
+
+            return Math.Round(step8, 3);
         }
 
         //Overriding the method in Vehicle class

@@ -56,12 +56,13 @@ namespace LauroreJean_FinalProject
         }
         public static double ValidateDouble(string s)
         {
-            Console.WriteLine();
+            Console.WriteLine(s);
             string response = Console.ReadLine();
             double d;
             while (!double.TryParse(response, out d))
             {
-                Console.WriteLine("Please enter a valid number(double)...");
+                Console.WriteLine("Please enter a valid number...");
+                Console.Write(s);
                 response = Console.ReadLine();
             }
             return d;

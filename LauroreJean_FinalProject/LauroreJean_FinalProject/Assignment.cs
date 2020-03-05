@@ -90,9 +90,8 @@ namespace LauroreJean_FinalProject
         {
             Console.Clear();
             //Setting UI color
-            Console.ForegroundColor = ConsoleColor.Cyan;
+            Console.ForegroundColor = ConsoleColor.Blue;
             Console.WriteLine("Car:");
-            Console.WriteLine("====");
             Console.WriteLine("====");
             Console.ForegroundColor = ConsoleColor.Gray;
 
@@ -102,14 +101,14 @@ namespace LauroreJean_FinalProject
 
             int year = Validation.ValidateInt("\nPlease enter the year of your car: ");
 
-            double loanPrice = Validation.ValidateDouble("\nPlease enter the loan amount: ");
-            Console.WriteLine("Enter the cost of your your dream car (or the amount you'll need to borrow). It's ok to guess.");
+            Console.WriteLine("\nEnter the cost of your your dream car\n(or the amount you'll need to borrow). It's ok to guess.");
+            double loanPrice = Validation.ValidateDouble("Please enter the loan amount: ");
 
-            int loanTerm = Validation.ValidateInt("\nPlease enter term lenght: ");
-            Console.WriteLine("How many month would you like to finance your loan? ");
+            Console.WriteLine("\nHow many month would you like to finance your loan? ");
+            int loanTerm = Validation.ValidateInt("Please enter term lenght: ");
 
-            decimal estimateAPR = Validation.ValidateDecimal("\nPlease enter your estimated APR:");
-            Console.WriteLine("This is the interest you'll pay in your loan, which depends on your credit and other factors.");
+            Console.WriteLine("\nThis is the interest you'll pay in your loan,\nwhich depends on your credit and other factors.");
+            double estimateAPR = Validation.ValidateDouble("Please enter your estimated APR:");
 
             //Instantiate the car class
             Car c = new Car(make.ToUpper(), model.ToUpper(), year, estimateAPR, loanPrice, loanTerm);
@@ -163,34 +162,36 @@ namespace LauroreJean_FinalProject
 
         public void DisplayVehicle()
         {
-
-        }
-
-        public void DeleteVehicle()
-        {
             Console.Clear();
             Console.Clear();
             //Setting UI color
-            Console.ForegroundColor = ConsoleColor.Cyan;
+            Console.ForegroundColor = ConsoleColor.Blue;
             Console.WriteLine("Display Vehicle:");
-            Console.WriteLine("================");
-            Console.WriteLine("================");
+            Console.WriteLine("*************************************************************************");
             Console.ForegroundColor = ConsoleColor.Gray;
 
 
             //Looping in the list for find if theirs vehicles and display them
             int counter = 0;
-            Console.WriteLine($"{"  "} {"Make",-10} {"Model",-20} {"Monthly Payments"}");
+            Console.ForegroundColor = ConsoleColor.Cyan;
+            Console.WriteLine($"{"  "} {"Make",-20} {"Model",-20} {"Year",-10} {"Monthly Payments"}");
+            Console.ForegroundColor = ConsoleColor.Gray;
             foreach (Vehicle vehicle in _vehicle)
             {
                 counter++;
-                Console.WriteLine($"{counter}. {vehicle.Make.ToUpper(), -10} {vehicle.Model.ToUpper(), -20} {vehicle.Year} {vehicle.Calculation().ToString("C")}");
+                Console.WriteLine($"{counter}. {vehicle.Make.ToUpper(), -20} {vehicle.Model.ToUpper(), -20} {vehicle.Year, -10} {vehicle.Calculation().ToString("C")}");
             }
 
             Console.WriteLine("Press any key to continue...");
             Console.ReadKey();
             _myMenu.Display();
             Selection();
+
+        }
+
+        public void DeleteVehicle()
+        {
+
         }
 
         public void Exit()
