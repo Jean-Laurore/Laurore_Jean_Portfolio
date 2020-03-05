@@ -92,7 +92,7 @@ namespace LauroreJean_FinalProject
             //Setting UI color
             Console.ForegroundColor = ConsoleColor.Blue;
             Console.WriteLine("Car:");
-            Console.WriteLine("=================================================================================================");
+            Console.WriteLine("===========================================================");
             Console.ForegroundColor = ConsoleColor.Gray;
 
             string make = Validation.ValidateString("\nPlease enter the make of your car: ");
@@ -129,7 +129,43 @@ namespace LauroreJean_FinalProject
 
         public void Helicopter()
         {
+            Console.Clear();
+            //Setting UI color
+            Console.ForegroundColor = ConsoleColor.Blue;
+            Console.WriteLine("Helicopter:");
+            Console.WriteLine("===========================================================");
+            Console.ForegroundColor = ConsoleColor.Gray;
 
+            string make = Validation.ValidateString("\nPlease enter the make of your helicopter: ");
+
+            string model = Validation.ValidateString("\nPlease enter the model of your helicopter: ");
+
+            int year = Validation.ValidateInt("\nPlease enter the year of your helicopter: ");
+
+            Console.WriteLine("\nEnter the cost of your your dream helicopter\n(or the amount you'll need to borrow). It's ok to guess.");
+            double loanPrice = Validation.ValidateDouble("Please enter the loan amount: ");
+
+            Console.WriteLine("\nHow many month would you like to finance your loan? ");
+            int loanTerm = Validation.ValidateInt("Please enter term lenght: ");
+
+            Console.WriteLine("\nThis is the interest you'll pay in your loan,\nwhich depends on your credit and other factors.");
+            double estimateAPR = Validation.ValidateDouble("Please enter your estimated APR:");
+
+            //Instantiate the car class
+            Helicopter h = new Helicopter(make.ToUpper(), model.ToUpper(), year, estimateAPR, loanPrice, loanTerm);
+
+            //Adding to the vehicle list
+            _vehicle.Add(h);
+
+            Console.WriteLine("\nNew Car Created!");
+
+
+
+            //Waiting for user to click any key to go back to the second menu
+            Console.WriteLine("Press any key to continue...");
+            Console.ReadKey();
+            _myMenu.Display();
+            Selection2();
         }
 
         public void Motorcycle()
@@ -162,24 +198,13 @@ namespace LauroreJean_FinalProject
         public void DisplayVehicle()
         {
             Console.Clear();
-            Console.Clear();
             //Setting UI color
             Console.ForegroundColor = ConsoleColor.Blue;
             Console.WriteLine("Display Vehicle:");
             Console.WriteLine("*************************************************************************");
             Console.ForegroundColor = ConsoleColor.Gray;
 
-            //Checking to see if theirs any vehicle in the list 
-            if (_vehicle == null)
-            {
-                Console.WriteLine("\nPlease add a vehicle before displaying anything.");
-                Console.WriteLine("Press any key to continue...");
-                Console.ReadKey();
-                _myMenu.Display();
-                Selection();
-            }
-            else
-            {
+           
                 //Looping in the list for find if theirs vehicles and display them
                 int counter = 0;
                 Console.ForegroundColor = ConsoleColor.Cyan;
@@ -190,7 +215,6 @@ namespace LauroreJean_FinalProject
                     counter++;
                     Console.WriteLine($"{counter}. {vehicle.Make.ToUpper(), -20} {vehicle.Model.ToUpper(), -20} {vehicle.Year, -10} {vehicle.Calculation().ToString("C")}");
                 }
-            }
 
             Console.WriteLine("Press any key to continue...");
             Console.ReadKey();
@@ -201,7 +225,6 @@ namespace LauroreJean_FinalProject
 
         public void DeleteVehicle()
         {
-            Console.Clear();
             Console.Clear();
             //Setting UI color
             Console.ForegroundColor = ConsoleColor.Red;
@@ -219,29 +242,19 @@ namespace LauroreJean_FinalProject
                 Console.WriteLine($"{counter}. {vehicle.Make.ToUpper(),-20} {vehicle.Model.ToUpper(),-20} {vehicle.Year,-10} {vehicle.Calculation().ToString("C")}");
             }
 
+            // Double if user really want to delete their vehicle.
 
             string make = Validation.ValidateString("\nPlease enter the make of the car to remove: ");
 
-            //Checking to see if theirs any vehicle in the list 
-            if (_vehicle == null)
+            
+            foreach (Vehicle vehicle in _vehicle)
             {
-                Console.WriteLine("\nPlease add to the list in order to delete.");
-                Console.WriteLine("\nPress any key to continue...");
-                Console.ReadKey();
-                _myMenu.Display();
-                Selection();
-            }
-            else
-            {
-                foreach (Vehicle vehicle in _vehicle)
-                {
-                    if (vehicle.Make.Contains(make.ToUpper()))
-                    {
-                        _vehicle.Remove(vehicle);
-                        vehicle.Delete();
-                        break;
-                    }
-                }
+               if (vehicle.Make.Contains(make.ToUpper()))
+               {
+                  _vehicle.Remove(vehicle);
+                  vehicle.Delete();
+                  break;
+               }
             }
 
             Console.WriteLine("Press any key to continue...");

@@ -35,7 +35,9 @@ namespace LauroreJean_FinalProject
         //Overriding the method in Vehicle class
         public override void Delete()
         {
+            Console.ForegroundColor = ConsoleColor.Red;
             Console.WriteLine("\nYou have deleted your car from the list.");
+            Console.ForegroundColor = ConsoleColor.Gray;
         }
     }
 }
