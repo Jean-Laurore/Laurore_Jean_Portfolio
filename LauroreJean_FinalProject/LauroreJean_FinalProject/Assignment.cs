@@ -19,6 +19,7 @@ namespace LauroreJean_FinalProject
         public Assignment()
         {
             CreatingFile();
+            Load();
             // Display menu
             _myMenu = new Menu("Add Vehicle", "Display Vehicle", "Delete Vehicle", "Exit");
             _myMenu.Title = "Vehicle Monthly Calculator Price";
@@ -111,31 +112,31 @@ namespace LauroreJean_FinalProject
 
 
         //Creating a load method to automatically to my display menu
-        //private void Load()
-        //{
-        //    using (StreamReader sr = new StreamReader(_directory + _fileName))
-        //    {
-        //        while (sr.Peek() > -1)
-        //        {
-        //            string line = sr.ReadLine();
-        //            if (line.Contains("Kalen"))
-        //            {
-        //                FullTime f = new FullTime("Kalen".ToUpper(), "2235 River".ToUpper(), 18, 40);
-        //                _employee.Add(f);
-        //            }
-        //            else if (line.Contains("Marcus"))
-        //            {
-        //                FullTime f1 = new FullTime("Marcus".ToUpper(), "2235 Land".ToUpper(), 27, 40);
-        //                _employee.Add(f1);
-        //            }
-        //            else if (line.Contains("Kevin"))
-        //            {
-        //                FullTime f2 = new FullTime("Kevin".ToUpper(), "2235 Beach".ToUpper(), 27, 40);
-        //                _employee.Add(f2);
-        //            }
-        //        }
-        //    }
-        //}
+        private void Load()
+        {
+            using (StreamReader sr = new StreamReader(_directory + _fileName))
+            {
+                while (sr.Peek() > -1)
+                {
+                    string line = sr.ReadLine();
+                    if (line.Contains("Kia"))
+                    {
+                        Car c = new Car("Kia".ToUpper(), "Optima".ToUpper(), "2016", 18000, 60, 15.30);
+                        _vehicle.Add(c);
+                    }
+                    else if (line.Contains("Chevy"))
+                    {
+                        Car c = new Car("Chevy".ToUpper(), "Camero".ToUpper(), "2016", 22000, 60, 15.25);
+                        _vehicle.Add(c);
+                    }
+                    else if (line.Contains("Honda"))
+                    {
+                        Car c = new Car("Honda".ToUpper(), "Accord".ToUpper(), "2017", 20000, 60, 15.74);
+                        _vehicle.Add(c);
+                    }
+                }
+            }
+        }
 
         public void Car()
         {
