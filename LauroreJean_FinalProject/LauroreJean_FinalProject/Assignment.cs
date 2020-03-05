@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 
 namespace LauroreJean_FinalProject
 {
@@ -11,8 +12,13 @@ namespace LauroreJean_FinalProject
         //Creating a list for vehicles
         private List<Vehicle> _vehicle = new List<Vehicle>();
 
+        //Creating a name for my folder and text
+        private string _directory = @"../../../output/";
+        private string _fileName = "vehicle.txt";
+
         public Assignment()
         {
+            CreatingFile();
             // Display menu
             _myMenu = new Menu("Add Vehicle", "Display Vehicle", "Delete Vehicle", "Exit");
             _myMenu.Title = "Vehicle Monthly Calculator Price";
@@ -86,6 +92,51 @@ namespace LauroreJean_FinalProject
             }
         }
 
+        //Creating the file to my folder
+        public void CreatingFile()
+        {
+            Directory.CreateDirectory(_directory);
+
+            if (!File.Exists(_directory + _fileName))
+            {
+                File.Create(_directory + _fileName).Dispose();
+                Console.WriteLine("File Created!");
+
+            }
+            else
+            {
+                Console.WriteLine("File exist");
+            }
+        }
+
+
+        //Creating a load method to automatically to my display menu
+        //private void Load()
+        //{
+        //    using (StreamReader sr = new StreamReader(_directory + _fileName))
+        //    {
+        //        while (sr.Peek() > -1)
+        //        {
+        //            string line = sr.ReadLine();
+        //            if (line.Contains("Kalen"))
+        //            {
+        //                FullTime f = new FullTime("Kalen".ToUpper(), "2235 River".ToUpper(), 18, 40);
+        //                _employee.Add(f);
+        //            }
+        //            else if (line.Contains("Marcus"))
+        //            {
+        //                FullTime f1 = new FullTime("Marcus".ToUpper(), "2235 Land".ToUpper(), 27, 40);
+        //                _employee.Add(f1);
+        //            }
+        //            else if (line.Contains("Kevin"))
+        //            {
+        //                FullTime f2 = new FullTime("Kevin".ToUpper(), "2235 Beach".ToUpper(), 27, 40);
+        //                _employee.Add(f2);
+        //            }
+        //        }
+        //    }
+        //}
+
         public void Car()
         {
             Console.Clear();
@@ -107,7 +158,7 @@ namespace LauroreJean_FinalProject
             }
 
             Console.WriteLine("\nEnter the cost of your your dream car\n(or the amount you'll need to borrow). It's ok to guess.");
-            double loanPrice = Validation.ValidateDouble("Please enter the loan amount: ");
+            double loanAmount = Validation.ValidateDouble("Please enter the loan amount: ");
 
             Console.WriteLine("\nHow many month would you like to finance your loan? ");
             int loanTerm = Validation.ValidateInt("Please enter term lenght: ");
@@ -116,7 +167,7 @@ namespace LauroreJean_FinalProject
             double estimateAPR = Validation.ValidateDouble("Please enter your estimated APR:");
 
             //Instantiate the car class
-            Car c = new Car(make.ToUpper(), model.ToUpper(), year, estimateAPR, loanPrice, loanTerm);
+            Car c = new Car(make.ToUpper(), model.ToUpper(), year, loanAmount, loanTerm, estimateAPR);
 
             //Adding to the vehicle list
             _vehicle.Add(c);
@@ -153,7 +204,7 @@ namespace LauroreJean_FinalProject
             }
 
             Console.WriteLine("\nEnter the cost of your your dream helicopter\n(or the amount you'll need to borrow). It's ok to guess.");
-            double loanPrice = Validation.ValidateDouble("Please enter the loan amount: ");
+            double loanAmount = Validation.ValidateDouble("Please enter the loan amount: ");
 
             Console.WriteLine("\nHow many month would you like to finance your loan? ");
             int loanTerm = Validation.ValidateInt("Please enter term lenght: ");
@@ -162,7 +213,7 @@ namespace LauroreJean_FinalProject
             double estimateAPR = Validation.ValidateDouble("Please enter your estimated APR:");
 
             //Instantiate the car class
-            Helicopter h = new Helicopter(make.ToUpper(), model.ToUpper(), year, estimateAPR, loanPrice, loanTerm);
+            Helicopter h = new Helicopter(make.ToUpper(), model.ToUpper(), year, loanAmount, loanTerm, estimateAPR);
 
             //Adding to the vehicle list
             _vehicle.Add(h);
@@ -197,7 +248,7 @@ namespace LauroreJean_FinalProject
             }
 
             Console.WriteLine("\nEnter the cost of your your dream motorcycle\n(or the amount you'll need to borrow). It's ok to guess.");
-            double loanPrice = Validation.ValidateDouble("Please enter the loan amount: ");
+            double loanAmount = Validation.ValidateDouble("Please enter the loan amount: ");
 
             Console.WriteLine("\nHow many month would you like to finance your loan? ");
             int loanTerm = Validation.ValidateInt("Please enter term lenght: ");
@@ -206,10 +257,10 @@ namespace LauroreJean_FinalProject
             double estimateAPR = Validation.ValidateDouble("Please enter your estimated APR:");
 
             //Instantiate the car class
-            Helicopter h = new Helicopter(make.ToUpper(), model.ToUpper(), year, estimateAPR, loanPrice, loanTerm);
+            Motorcycle m = new Motorcycle(make.ToUpper(), model.ToUpper(), year, loanAmount, loanTerm, estimateAPR);
 
             //Adding to the vehicle list
-            _vehicle.Add(h);
+            _vehicle.Add(m);
 
             Console.WriteLine("\nNew Motorcycle Created!");
 
@@ -255,12 +306,12 @@ namespace LauroreJean_FinalProject
                 //Looping in the list for find if theirs vehicles and display them
                 int counter = 0;
                 Console.ForegroundColor = ConsoleColor.Cyan;
-                Console.WriteLine($"{"  "} {"Make",-20} {"Model",-20} {"Year",-10} {"Monthly Payments"}");
+                Console.WriteLine($"{"  "} {"Make",-10} {"Loan-Amount",-12} {"Loan-Terms",-12} {"Estimated-APR",-15} {"Monthly-Payments"}");
                 Console.ForegroundColor = ConsoleColor.Gray;
                 foreach (Vehicle vehicle in _vehicle)
                 {
                     counter++;
-                    Console.WriteLine($"{counter}. {vehicle.Make.ToUpper(), -20} {vehicle.Model.ToUpper(), -20} {vehicle.Year, -10} {vehicle.Calculation().ToString("C")}");
+                    Console.WriteLine($"{counter}. {vehicle.Make.ToUpper(), -10} {vehicle.LoanAmount.ToString("C"),-15} {vehicle.LoanTerms, -12} {vehicle.EstimatedAPR +"%", -14} {vehicle.Calculation().ToString("C")}");
                 }
 
             Console.WriteLine("Press any key to continue...");
@@ -310,12 +361,12 @@ namespace LauroreJean_FinalProject
                {
                   _vehicle.Remove(vehicle);
                   vehicle.Delete();
-                  break;
-               }
+                  //break;
                     Console.WriteLine("\nPress any key to continue...");
                     Console.ReadKey();
                     _myMenu.Display();
                     Selection();
+               }
                 }
 
             }
@@ -335,8 +386,7 @@ namespace LauroreJean_FinalProject
 
         public void Exit()
         {
-            Console.Clear();
-            Console.WriteLine("Thanks for using my Vehicle Monthly Calculator Price. GoodBye!");
+            Console.WriteLine("\nThanks for using my Vehicle Monthly Calculator Price. GoodBye!");
         }
     }
 }

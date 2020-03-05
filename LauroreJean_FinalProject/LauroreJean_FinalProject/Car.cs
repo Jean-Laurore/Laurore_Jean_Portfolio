@@ -5,24 +5,23 @@ namespace LauroreJean_FinalProject
     public class Car:Vehicle
     {
         //Fields
-        public double LoanPrice { get; set; }
-        public int LoanTerms { get; set; }
-        public double EstimateAPR { get; set; }
+        public new double LoanAmount { get; set; }
+        public new int LoanTerms { get; set; }
+        public new double EstimatedAPR { get; set; }
 
-        public Car(string make, string model, string year, double estimateAPR, double loanPrice, int loanTerms):base(make, model, year)
+        public Car(string make, string model, string year, double loanAmount, int loanTerms, double estimatedAPR) :base(make, model, year, loanAmount, loanTerms, estimatedAPR)
         {
-            Year = year;
-            EstimateAPR = estimateAPR;
-            LoanPrice = loanPrice;
+            EstimatedAPR = estimatedAPR;
+            LoanAmount = loanAmount;
             LoanTerms = loanTerms;
         }
 
         //Overriding the default method in Vehicle class
         public override double Calculation()
         {
-            double step1 = EstimateAPR / 100;
+            double step1 = EstimatedAPR / 100;
             double step2 = step1 / 12;
-            double step3 = step2 * LoanPrice;
+            double step3 = step2 * LoanAmount;
             double step4 = step2 + 1;
             double step5 = Math.Pow(step4, 36);
             double step6 = 1 / step5;

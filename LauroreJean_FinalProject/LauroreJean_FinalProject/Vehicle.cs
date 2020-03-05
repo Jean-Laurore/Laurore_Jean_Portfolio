@@ -10,12 +10,21 @@ namespace LauroreJean_FinalProject
         public string Model { get; set; }
         public string Year { get; set; }
 
+        public double LoanAmount { get; set; }
+        public double EstimatedAPR { get; set; }
+
+        public int LoanTerms { get; set; }
+
+
         //Constructor
-        public Vehicle(string make, string model, string year) 
+        public Vehicle(string make, string model, string year, double loanAmount, int loanTerms, double estimatedAPR) 
         {
             Make = make;
             Model = model;
             Year = year;
+            LoanAmount = loanAmount;
+            LoanTerms = loanTerms;
+            EstimatedAPR = estimatedAPR;
         }
 
         //Defaut method to calculate
