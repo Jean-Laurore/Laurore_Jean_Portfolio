@@ -9,7 +9,7 @@ namespace LauroreJean_FinalProject
         public int LoanTerms { get; set; }
         public double EstimateAPR { get; set; }
 
-        public Car(string make, string model, int year, double estimateAPR, double loanPrice, int loanTerms):base(make, model, year)
+        public Car(string make, string model, string year, double estimateAPR, double loanPrice, int loanTerms):base(make, model, year)
         {
             Year = year;
             EstimateAPR = estimateAPR;

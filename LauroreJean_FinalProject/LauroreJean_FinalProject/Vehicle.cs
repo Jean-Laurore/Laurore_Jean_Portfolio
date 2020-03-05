@@ -8,10 +8,10 @@ namespace LauroreJean_FinalProject
         //Fields
         public string Make { get; set; }
         public string Model { get; set; }
-        public int Year { get; set; }
+        public string Year { get; set; }
 
         //Constructor
-        public Vehicle(string make, string model, int year) 
+        public Vehicle(string make, string model, string year) 
         {
             Make = make;
             Model = model;

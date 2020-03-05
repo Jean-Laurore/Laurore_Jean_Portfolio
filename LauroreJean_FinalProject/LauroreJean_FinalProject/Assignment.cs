@@ -91,7 +91,7 @@ namespace LauroreJean_FinalProject
             Console.Clear();
             //Setting UI color
             Console.ForegroundColor = ConsoleColor.Blue;
-            Console.WriteLine("Car:");
+            Console.WriteLine("Car");
             Console.WriteLine("===========================================================");
             Console.ForegroundColor = ConsoleColor.Gray;
 
@@ -99,7 +99,12 @@ namespace LauroreJean_FinalProject
 
             string model = Validation.ValidateString("\nPlease enter the model of your car: ");
 
-            int year = Validation.ValidateInt("\nPlease enter the year of your car: ");
+            string year = Validation.ValidateString("\nPlease enter the year of your car: ");
+            while (year.Length < 4 || year.Length > 4)
+            {
+                Console.WriteLine("\nThat is not a valid year. Please try again.");
+                year = Validation.ValidateString("\nPlease enter the year of your car: ");
+            }
 
             Console.WriteLine("\nEnter the cost of your your dream car\n(or the amount you'll need to borrow). It's ok to guess.");
             double loanPrice = Validation.ValidateDouble("Please enter the loan amount: ");
@@ -131,8 +136,8 @@ namespace LauroreJean_FinalProject
         {
             Console.Clear();
             //Setting UI color
-            Console.ForegroundColor = ConsoleColor.Blue;
-            Console.WriteLine("Helicopter:");
+            Console.ForegroundColor = ConsoleColor.Magenta;
+            Console.WriteLine("Helicopter");
             Console.WriteLine("===========================================================");
             Console.ForegroundColor = ConsoleColor.Gray;
 
@@ -140,7 +145,12 @@ namespace LauroreJean_FinalProject
 
             string model = Validation.ValidateString("\nPlease enter the model of your helicopter: ");
 
-            int year = Validation.ValidateInt("\nPlease enter the year of your helicopter: ");
+            string year = Validation.ValidateString("\nPlease enter the year of your helicopter: ");
+            while (year.Length < 4 || year.Length > 4)
+            {
+                Console.WriteLine("\nThat is not a valid year. Please try again.");
+                year = Validation.ValidateString("\nPlease enter the year of your helicopter: ");
+            }
 
             Console.WriteLine("\nEnter the cost of your your dream helicopter\n(or the amount you'll need to borrow). It's ok to guess.");
             double loanPrice = Validation.ValidateDouble("Please enter the loan amount: ");
@@ -157,9 +167,7 @@ namespace LauroreJean_FinalProject
             //Adding to the vehicle list
             _vehicle.Add(h);
 
-            Console.WriteLine("\nNew Car Created!");
-
-
+            Console.WriteLine("\nNew Helicopter Created!");
 
             //Waiting for user to click any key to go back to the second menu
             Console.WriteLine("Press any key to continue...");
@@ -170,7 +178,46 @@ namespace LauroreJean_FinalProject
 
         public void Motorcycle()
         {
+            Console.Clear();
+            //Setting UI color
+            Console.ForegroundColor = ConsoleColor.Yellow;
+            Console.WriteLine("Motorcycle");
+            Console.WriteLine("===========================================================");
+            Console.ForegroundColor = ConsoleColor.Gray;
 
+            string make = Validation.ValidateString("\nPlease enter the make of your motorcycle: ");
+
+            string model = Validation.ValidateString("\nPlease enter the model of your motorcycle: ");
+
+            string year = Validation.ValidateString("\nPlease enter the year of your motorcycle: ");
+            while (year.Length < 4 || year.Length > 4)
+            {
+                Console.WriteLine("\nThat is not a valid year. Please try again.");
+                year = Validation.ValidateString("\nPlease enter the year of your motorcycle: ");
+            }
+
+            Console.WriteLine("\nEnter the cost of your your dream motorcycle\n(or the amount you'll need to borrow). It's ok to guess.");
+            double loanPrice = Validation.ValidateDouble("Please enter the loan amount: ");
+
+            Console.WriteLine("\nHow many month would you like to finance your loan? ");
+            int loanTerm = Validation.ValidateInt("Please enter term lenght: ");
+
+            Console.WriteLine("\nThis is the interest you'll pay in your loan,\nwhich depends on your credit and other factors.");
+            double estimateAPR = Validation.ValidateDouble("Please enter your estimated APR:");
+
+            //Instantiate the car class
+            Helicopter h = new Helicopter(make.ToUpper(), model.ToUpper(), year, estimateAPR, loanPrice, loanTerm);
+
+            //Adding to the vehicle list
+            _vehicle.Add(h);
+
+            Console.WriteLine("\nNew Motorcycle Created!");
+
+            //Waiting for user to click any key to go back to the second menu
+            Console.WriteLine("Press any key to continue...");
+            Console.ReadKey();
+            _myMenu.Display();
+            Selection2();
         }
 
         public void MainMenu()
@@ -186,7 +233,7 @@ namespace LauroreJean_FinalProject
         {
             Console.Clear();
             //Setting UI color
-            Console.ForegroundColor = ConsoleColor.Cyan;
+            Console.ForegroundColor = ConsoleColor.DarkGreen;
             Console.WriteLine("Add Vehicle:");
             Console.WriteLine("======================================");
             Console.ForegroundColor = ConsoleColor.Gray;
@@ -242,22 +289,45 @@ namespace LauroreJean_FinalProject
                 Console.WriteLine($"{counter}. {vehicle.Make.ToUpper(),-20} {vehicle.Model.ToUpper(),-20} {vehicle.Year,-10} {vehicle.Calculation().ToString("C")}");
             }
 
-            // Double if user really want to delete their vehicle.
 
             string make = Validation.ValidateString("\nPlease enter the make of the car to remove: ");
 
-            
+            // DoubleCheck if user really want to delete their vehicle.
+            string db = Validation.ValidateString("\nAre you sure? Please type YES OR NO.");
+
+            if (db.Contains("no".ToUpper()) || db.Contains("no".ToLower()))
+            {
+                Console.WriteLine("Press any key to continue...");
+                Console.ReadKey();
+                _myMenu.Display();
+                Selection();
+            }
+            else if (db.Contains("yes".ToUpper()) || db.Contains("yes".ToLower()))
+            {
             foreach (Vehicle vehicle in _vehicle)
             {
-               if (vehicle.Make.Contains(make.ToUpper()))
+               if (vehicle.Make.Contains(make.ToUpper()) || vehicle.Make.Contains(make.ToLower()))
                {
                   _vehicle.Remove(vehicle);
                   vehicle.Delete();
                   break;
                }
+                    Console.WriteLine("\nPress any key to continue...");
+                    Console.ReadKey();
+                    _myMenu.Display();
+                    Selection();
+                }
+
+            }
+            else
+            {
+                Console.WriteLine("\nPlease only type YES OR NO.");
+                Console.WriteLine("\nPress any key to continue...");
+                Console.ReadKey();
+                DeleteVehicle();
             }
 
-            Console.WriteLine("Press any key to continue...");
+            Console.WriteLine("\nPress any key to continue...");
             Console.ReadKey();
             _myMenu.Display();
             Selection();
