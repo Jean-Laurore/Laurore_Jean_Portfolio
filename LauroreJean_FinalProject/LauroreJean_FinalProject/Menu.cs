@@ -27,7 +27,7 @@ namespace LauroreJean_FinalProject
             Console.ForegroundColor = ConsoleColor.Cyan;
             Console.WriteLine(Title);
             Console.ForegroundColor = ConsoleColor.Gray;
-            Console.WriteLine("================\n");
+            Console.WriteLine("================================\n");
             for (int i = 0; i < _items.Count; i++)
             {
                 Console.WriteLine($"{i + 1}: {_items[i]}");

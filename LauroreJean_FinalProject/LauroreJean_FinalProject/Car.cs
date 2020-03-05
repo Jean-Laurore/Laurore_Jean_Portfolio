@@ -5,16 +5,16 @@ namespace LauroreJean_FinalProject
     public class Car:Vehicle
     {
         //Fields
-        public int Year { get; set; }
-        public int EstimateAPR { get; set; }
+        public double LoanPrice { get; set; }
+        public int LoanTerms { get; set; }
+        public decimal EstimateAPR { get; set; }
 
-        public decimal Price { get; set; }
-
-        public Car(string make, string model, int year, int estimateAPR, decimal price):base(make, model)
+        public Car(string make, string model, int year, decimal estimateAPR, decimal loanPrice, int loanTerms):base(make, model, year)
         {
             Year = year;
             EstimateAPR = estimateAPR;
-            Price = price;
+            LoanPrice = loanPrice;
+            LoanTerms = loanTerms;
         }
 
         //Overriding the default method in Vehicle class
