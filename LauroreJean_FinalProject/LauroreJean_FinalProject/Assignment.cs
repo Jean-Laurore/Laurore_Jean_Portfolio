@@ -1,9 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Threading;
 
 namespace LauroreJean_FinalProject
 {
+    //Interface to load the documents
+    interface IStorable
+    {
+        void Loading();
+    }
+
     public class Assignment
     {
         //Calling the menu class
@@ -18,6 +25,7 @@ namespace LauroreJean_FinalProject
 
         public Assignment()
         {
+            Loading();
             CreatingFile();
             Load();
             // Display menu
@@ -26,6 +34,36 @@ namespace LauroreJean_FinalProject
             _myMenu.Display();
             Selection();
         }
+
+        public void Loading()
+        {
+            Console.WriteLine("Loading the documents");
+            LoadingBar();
+            Console.ForegroundColor = ConsoleColor.Green;
+            Console.WriteLine("\nSuccessful");
+            Console.ForegroundColor = ConsoleColor.Gray;
+            Console.WriteLine("\nPress any key to continue...");
+            Console.ReadKey();
+        }
+
+        //Loading method
+        public void LoadingBar()
+        {
+            Console.CursorVisible = false;
+            Console.SetCursorPosition(1, 1);
+
+            for (int i = 0; i < 101; i++)
+            {
+                for (int y = 0; y < i; y++)
+                {
+                    Console.Write("");
+                }
+                Console.Write($"LOADING... {i}%");
+                Console.SetCursorPosition(1, 1);
+                Thread.Sleep(50);
+            }
+        }
+
 
         private void Selection()
         {
