@@ -92,10 +92,10 @@ namespace LauroreJean_FinalProject
             //Setting UI color
             Console.ForegroundColor = ConsoleColor.Blue;
             Console.WriteLine("Car:");
-            Console.WriteLine("====");
+            Console.WriteLine("=================================================================================================");
             Console.ForegroundColor = ConsoleColor.Gray;
 
-            string make = Validation.ValidateString("\nPlease the make of your car: ");
+            string make = Validation.ValidateString("\nPlease enter the make of your car: ");
 
             string model = Validation.ValidateString("\nPlease enter the model of your car: ");
 
@@ -152,8 +152,7 @@ namespace LauroreJean_FinalProject
             //Setting UI color
             Console.ForegroundColor = ConsoleColor.Cyan;
             Console.WriteLine("Add Vehicle:");
-            Console.WriteLine("============");
-            Console.WriteLine("============");
+            Console.WriteLine("======================================");
             Console.ForegroundColor = ConsoleColor.Gray;
 
 
@@ -170,16 +169,27 @@ namespace LauroreJean_FinalProject
             Console.WriteLine("*************************************************************************");
             Console.ForegroundColor = ConsoleColor.Gray;
 
-
-            //Looping in the list for find if theirs vehicles and display them
-            int counter = 0;
-            Console.ForegroundColor = ConsoleColor.Cyan;
-            Console.WriteLine($"{"  "} {"Make",-20} {"Model",-20} {"Year",-10} {"Monthly Payments"}");
-            Console.ForegroundColor = ConsoleColor.Gray;
-            foreach (Vehicle vehicle in _vehicle)
+            //Checking to see if theirs any vehicle in the list 
+            if (_vehicle == null)
             {
-                counter++;
-                Console.WriteLine($"{counter}. {vehicle.Make.ToUpper(), -20} {vehicle.Model.ToUpper(), -20} {vehicle.Year, -10} {vehicle.Calculation().ToString("C")}");
+                Console.WriteLine("\nPlease add a vehicle before displaying anything.");
+                Console.WriteLine("Press any key to continue...");
+                Console.ReadKey();
+                _myMenu.Display();
+                Selection();
+            }
+            else
+            {
+                //Looping in the list for find if theirs vehicles and display them
+                int counter = 0;
+                Console.ForegroundColor = ConsoleColor.Cyan;
+                Console.WriteLine($"{"  "} {"Make",-20} {"Model",-20} {"Year",-10} {"Monthly Payments"}");
+                Console.ForegroundColor = ConsoleColor.Gray;
+                foreach (Vehicle vehicle in _vehicle)
+                {
+                    counter++;
+                    Console.WriteLine($"{counter}. {vehicle.Make.ToUpper(), -20} {vehicle.Model.ToUpper(), -20} {vehicle.Year, -10} {vehicle.Calculation().ToString("C")}");
+                }
             }
 
             Console.WriteLine("Press any key to continue...");
@@ -191,7 +201,53 @@ namespace LauroreJean_FinalProject
 
         public void DeleteVehicle()
         {
+            Console.Clear();
+            Console.Clear();
+            //Setting UI color
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.WriteLine("Delete Vehicle:");
+            Console.WriteLine("*************************************************************************");
+            Console.ForegroundColor = ConsoleColor.Gray;
 
+            int counter = 0;
+            Console.ForegroundColor = ConsoleColor.Cyan;
+            Console.WriteLine($"{"  "} {"Make",-20} {"Model",-20} {"Year",-10} {"Monthly Payments"}");
+            Console.ForegroundColor = ConsoleColor.Gray;
+            foreach (Vehicle vehicle in _vehicle)
+            {
+                counter++;
+                Console.WriteLine($"{counter}. {vehicle.Make.ToUpper(),-20} {vehicle.Model.ToUpper(),-20} {vehicle.Year,-10} {vehicle.Calculation().ToString("C")}");
+            }
+
+
+            string make = Validation.ValidateString("\nPlease enter the make of the car to remove: ");
+
+            //Checking to see if theirs any vehicle in the list 
+            if (_vehicle == null)
+            {
+                Console.WriteLine("\nPlease add to the list in order to delete.");
+                Console.WriteLine("\nPress any key to continue...");
+                Console.ReadKey();
+                _myMenu.Display();
+                Selection();
+            }
+            else
+            {
+                foreach (Vehicle vehicle in _vehicle)
+                {
+                    if (vehicle.Make.Contains(make.ToUpper()))
+                    {
+                        _vehicle.Remove(vehicle);
+                        vehicle.Delete();
+                        break;
+                    }
+                }
+            }
+
+            Console.WriteLine("Press any key to continue...");
+            Console.ReadKey();
+            _myMenu.Display();
+            Selection();
         }
 
         public void Exit()
