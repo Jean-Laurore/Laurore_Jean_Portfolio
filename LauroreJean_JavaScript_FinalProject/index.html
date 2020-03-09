@@ -8,7 +8,7 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 
-    <title>Hello, world!</title>
+    <title>Vehicle Monthly Calculator</title>
   </head>
   <body class="bg-dark">
     <div class="container">
@@ -17,6 +17,22 @@
           <div class="card card-body text-center mt-5">
             <h1 class="heading display-5 pb-3">Vehicle Monthly Price</h1>
             <form id="loan-form">
+              <p>Please select your vehicle:</p>
+              <input type="radio" id="car" name="car" value="car">
+              <label for="car">Car</label><br>
+              <input type="radio" id="helicopter" name="helicopter" value="helicopter">
+              <label for="car">Helicopter</label><br>
+              <input type="radio" id="motorcycle" name="motorcycle" value="motorcycle">
+              <label for="car">Motorcycle</label><br>
+              <div class="form-group">
+                <input type="text" class="form-control" id="make" placeholder="Vehicle Make">
+              </div>
+              <div class="form-group">
+                <input type="text" class="form-control" id="model" placeholder="Vehicle Model">
+              </div>
+              <div class="form-group">
+                <input type="number" class="form-control" id="year" placeholder="Vehicle Year">
+              </div>
               <div class="form-group">
                 <div class="input-group">
                   <span class="input-group-addon">$</span>
@@ -47,11 +63,11 @@
             <h5>Results</h5>
             <div class="form-group">
               <div class="input-group">
-                <span class="input-group-addon">Monthly Payment</span>
+                <span class="input-group-addon">Monthly Payment:</span>
                 <input type="number" class="form-control" id="monthly-payment" disabled>
               </div>
             </div>
-
+            <!--
             <div class="form-group">
               <div class="input-group">
                 <span class="input-group-addon">Total Payment</span>
@@ -65,6 +81,7 @@
                 <input type="number" class="form-control" id="total-interest" disabled>
               </div>
             </div>
+            -->
           </div>
           </div>
         </div>
