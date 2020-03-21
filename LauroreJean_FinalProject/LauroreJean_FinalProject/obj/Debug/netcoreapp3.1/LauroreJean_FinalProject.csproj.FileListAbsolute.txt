@@ -8,3 +8,4 @@
 /Users/jeanlaurore/Desktop/PROJECT AND PORTFOLIO II/LauroreJean_FinalProject/LauroreJean_FinalProject/obj/Debug/netcoreapp3.1/LauroreJean_FinalProject.AssemblyInfo.cs
 /Users/jeanlaurore/Desktop/PROJECT AND PORTFOLIO II/LauroreJean_FinalProject/LauroreJean_FinalProject/obj/Debug/netcoreapp3.1/LauroreJean_FinalProject.dll
 /Users/jeanlaurore/Desktop/PROJECT AND PORTFOLIO II/LauroreJean_FinalProject/LauroreJean_FinalProject/obj/Debug/netcoreapp3.1/LauroreJean_FinalProject.pdb
+/Users/jeanlaurore/Desktop/PROJECT AND PORTFOLIO II/LauroreJean_FinalProject/LauroreJean_FinalProject/obj/Debug/netcoreapp3.1/LauroreJean_FinalProject.csproj.CoreCompileInputs.cache

@@ -1,0 +1,25 @@
+﻿<Properties StartupConfiguration="{75B6EB6C-AA21-4D0D-9A31-21F99B002B42}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="LauroreJean_PR01/Program.cs">
+    <Files>
+      <File FileName="LauroreJean_PR01/Program.cs" Line="115" Column="64" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="LauroreJean_PR01" expanded="True">
+            <Node name="LauroreJean_PR01" expanded="True">
+              <Node name="Program.cs" selected="True" />
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.ItemProperties.LauroreJean__PR01 PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>

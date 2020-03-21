@@ -1,0 +1,11 @@
+/Users/jeanlaurore/Desktop/SDI/Laurore_Jean_logic4/Laurore_Jean_logic4/bin/Debug/netcoreapp3.0/Laurore_Jean_logic4
+/Users/jeanlaurore/Desktop/SDI/Laurore_Jean_logic4/Laurore_Jean_logic4/bin/Debug/netcoreapp3.0/Laurore_Jean_logic4.deps.json
+/Users/jeanlaurore/Desktop/SDI/Laurore_Jean_logic4/Laurore_Jean_logic4/bin/Debug/netcoreapp3.0/Laurore_Jean_logic4.runtimeconfig.json
+/Users/jeanlaurore/Desktop/SDI/Laurore_Jean_logic4/Laurore_Jean_logic4/bin/Debug/netcoreapp3.0/Laurore_Jean_logic4.runtimeconfig.dev.json
+/Users/jeanlaurore/Desktop/SDI/Laurore_Jean_logic4/Laurore_Jean_logic4/bin/Debug/netcoreapp3.0/Laurore_Jean_logic4.dll
+/Users/jeanlaurore/Desktop/SDI/Laurore_Jean_logic4/Laurore_Jean_logic4/bin/Debug/netcoreapp3.0/Laurore_Jean_logic4.pdb
+/Users/jeanlaurore/Desktop/SDI/Laurore_Jean_logic4/Laurore_Jean_logic4/obj/Debug/netcoreapp3.0/Laurore_Jean_logic4.csprojAssemblyReference.cache
+/Users/jeanlaurore/Desktop/SDI/Laurore_Jean_logic4/Laurore_Jean_logic4/obj/Debug/netcoreapp3.0/Laurore_Jean_logic4.AssemblyInfoInputs.cache
+/Users/jeanlaurore/Desktop/SDI/Laurore_Jean_logic4/Laurore_Jean_logic4/obj/Debug/netcoreapp3.0/Laurore_Jean_logic4.AssemblyInfo.cs
+/Users/jeanlaurore/Desktop/SDI/Laurore_Jean_logic4/Laurore_Jean_logic4/obj/Debug/netcoreapp3.0/Laurore_Jean_logic4.dll
+/Users/jeanlaurore/Desktop/SDI/Laurore_Jean_logic4/Laurore_Jean_logic4/obj/Debug/netcoreapp3.0/Laurore_Jean_logic4.pdb

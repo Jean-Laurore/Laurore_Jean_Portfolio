@@ -1,0 +1,11 @@
+/Users/jeanlaurore/Desktop/SDI/LauroreJean_PR01/LauroreJean_PR01/bin/Debug/netcoreapp3.0/LauroreJean_PR01
+/Users/jeanlaurore/Desktop/SDI/LauroreJean_PR01/LauroreJean_PR01/bin/Debug/netcoreapp3.0/LauroreJean_PR01.deps.json
+/Users/jeanlaurore/Desktop/SDI/LauroreJean_PR01/LauroreJean_PR01/bin/Debug/netcoreapp3.0/LauroreJean_PR01.runtimeconfig.json
+/Users/jeanlaurore/Desktop/SDI/LauroreJean_PR01/LauroreJean_PR01/bin/Debug/netcoreapp3.0/LauroreJean_PR01.runtimeconfig.dev.json
+/Users/jeanlaurore/Desktop/SDI/LauroreJean_PR01/LauroreJean_PR01/bin/Debug/netcoreapp3.0/LauroreJean_PR01.dll
+/Users/jeanlaurore/Desktop/SDI/LauroreJean_PR01/LauroreJean_PR01/bin/Debug/netcoreapp3.0/LauroreJean_PR01.pdb
+/Users/jeanlaurore/Desktop/SDI/LauroreJean_PR01/LauroreJean_PR01/obj/Debug/netcoreapp3.0/LauroreJean_PR01.csprojAssemblyReference.cache
+/Users/jeanlaurore/Desktop/SDI/LauroreJean_PR01/LauroreJean_PR01/obj/Debug/netcoreapp3.0/LauroreJean_PR01.AssemblyInfoInputs.cache
+/Users/jeanlaurore/Desktop/SDI/LauroreJean_PR01/LauroreJean_PR01/obj/Debug/netcoreapp3.0/LauroreJean_PR01.AssemblyInfo.cs
+/Users/jeanlaurore/Desktop/SDI/LauroreJean_PR01/LauroreJean_PR01/obj/Debug/netcoreapp3.0/LauroreJean_PR01.dll
+/Users/jeanlaurore/Desktop/SDI/LauroreJean_PR01/LauroreJean_PR01/obj/Debug/netcoreapp3.0/LauroreJean_PR01.pdb

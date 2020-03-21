@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v3.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v3.0": {
+      "LauroreJean_PR01/1.0.0": {
+        "runtime": {
+          "LauroreJean_PR01.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "LauroreJean_PR01/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

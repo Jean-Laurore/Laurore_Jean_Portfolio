@@ -1,0 +1,25 @@
+﻿<Properties StartupConfiguration="{C9E9E5EF-9904-4679-B272-6EEE207BDF22}|Default">
+  <MonoDevelop.Ide.ItemProperties.Laurore__Jean__Lab6 PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Laurore_Jean_Lab6/Program.cs">
+    <Files>
+      <File FileName="Laurore_Jean_Lab6/Program.cs" Line="85" Column="86" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="Laurore_Jean_Lab6" expanded="True">
+            <Node name="Laurore_Jean_Lab6" expanded="True">
+              <Node name="Program.cs" selected="True" />
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>
