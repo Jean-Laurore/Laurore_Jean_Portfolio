@@ -54,6 +54,13 @@ function showError(error){
 }
 
 // Clear error
+class Remove {
+  constructor (x){
+    this.className = x;
+    clearError;
+  }
+}
 function clearError(){
   document.querySelector('.alert').remove();
 }
+myRemove = new Remove()

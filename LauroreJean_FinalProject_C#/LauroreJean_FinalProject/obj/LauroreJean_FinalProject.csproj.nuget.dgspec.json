@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/Users/jeanlaurore/Desktop/PROJECT AND PORTFOLIO II/LauroreJean_FinalProject/LauroreJean_FinalProject/LauroreJean_FinalProject.csproj": {}
+    "/Users/jeanlaurore/Desktop/PROJECT AND PORTFOLIO II/LauroreJean_FinalProject_C#/LauroreJean_FinalProject/LauroreJean_FinalProject.csproj": {}
   },
   "projects": {
-    "/Users/jeanlaurore/Desktop/PROJECT AND PORTFOLIO II/LauroreJean_FinalProject/LauroreJean_FinalProject/LauroreJean_FinalProject.csproj": {
+    "/Users/jeanlaurore/Desktop/PROJECT AND PORTFOLIO II/LauroreJean_FinalProject_C#/LauroreJean_FinalProject/LauroreJean_FinalProject.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/jeanlaurore/Desktop/PROJECT AND PORTFOLIO II/LauroreJean_FinalProject/LauroreJean_FinalProject/LauroreJean_FinalProject.csproj",
+        "projectUniqueName": "/Users/jeanlaurore/Desktop/PROJECT AND PORTFOLIO II/LauroreJean_FinalProject_C#/LauroreJean_FinalProject/LauroreJean_FinalProject.csproj",
         "projectName": "LauroreJean_FinalProject",
-        "projectPath": "/Users/jeanlaurore/Desktop/PROJECT AND PORTFOLIO II/LauroreJean_FinalProject/LauroreJean_FinalProject/LauroreJean_FinalProject.csproj",
+        "projectPath": "/Users/jeanlaurore/Desktop/PROJECT AND PORTFOLIO II/LauroreJean_FinalProject_C#/LauroreJean_FinalProject/LauroreJean_FinalProject.csproj",
         "packagesPath": "/Users/jeanlaurore/.nuget/packages/",
-        "outputPath": "/Users/jeanlaurore/Desktop/PROJECT AND PORTFOLIO II/LauroreJean_FinalProject/LauroreJean_FinalProject/obj/",
+        "outputPath": "/Users/jeanlaurore/Desktop/PROJECT AND PORTFOLIO II/LauroreJean_FinalProject_C#/LauroreJean_FinalProject/obj/",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
@@ -53,7 +53,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/3.1.102/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/3.1.200/RuntimeIdentifierGraph.json"
         }
       }
     }
